@@ -1,0 +1,31 @@
+.bg-category{
+    background-color: #4ea4ff;
+    border-radius: 4px;
+   }
+   
+.bg-subcategory{
+   /*background: #F8F8F8;*/
+    background-color: #e7f2ff;
+   }
+
+.btn-outline-category{
+      color: #007bff;
+      border-color:#007bff; 
+  }
+  
+.btn-outline-subcategory{
+      color: black; /* rgb(54, 148, 247);*/
+      border-color:black;
+  }
+  
+.btn-outline-item{
+      color: black; /*rgb(102, 174, 250);*/
+      border-color: black;
+  }
+
+.input-order{
+  border-radius: .2rem;
+  border: 1px solid black;
+  font-size: .875rem;
+  margin: 2px;
+}

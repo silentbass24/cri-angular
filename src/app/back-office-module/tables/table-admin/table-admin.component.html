@@ -1,0 +1,18 @@
+<div class="card-body">
+    <div style="margin:20px;" *ngIf="searchName!=='report' && searchName!=='report_details' && searchName!=='check_report_details'">
+        <div style="margin-left:50px;">
+            <a *ngIf="thisURL==='/admin/items'" class="m-1 btn btn-sm btn-outline-primary" (click)="addNewCategory()">AGGIUNGI CATEGORIA</a>
+            <a class="m-1 btn btn-sm btn-outline-primary" (click)="addNew()">{{aggiungiNuovo}}</a>
+        </div>
+    </div>
+    
+    <app-update-report-item *ngIf="searchName==='report_details'" [itemData]="itemData" 
+                            [lastItem]="lastItem" [riparato]="riparato"></app-update-report-item>
+    <wd-search
+           [searchName]="searchName"
+           [disabled]=false
+           [extra_parameters]="extra_parameters"
+           (updateData)="onUpdateData($event)"
+           (deleteData)="onDeleteData($event)"
+    ></wd-search>
+</div>

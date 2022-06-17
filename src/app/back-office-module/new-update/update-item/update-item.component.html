@@ -1,0 +1,29 @@
+<div class="container justify-content-center">
+    <form>
+        <div class="pb-4 mt-4 text-center" *ngIf="itemID!==null"><b>AGGIORNA DATI ITEM</b></div>
+        <div class="pb-4 mt-4 text-center" *ngIf="itemID===null"><b>AGGIUNGI NUOVO ITEM</b></div>
+       
+        <div class="row">
+            <wd-field-text [title]="'Nome'" [required]=true (valueChange)="itemData.Name = $event"
+                [searchButtonVisible]=false class="p-0 px-2 col-12 col-md-6" [value]="itemData.Name"></wd-field-text>
+            <p *ngIf="itemData.Name === undefined" class="p-0 ngp-error-input">{{errorText}}</p>
+            <wd-field-select [title]="'Tipo'" [options]="opzioniTipi" [selected]="itemData.ItemType"
+                (valueChange)="itemData.ItemType = $event" class="p-0 px-2 col-12 col-md-6"></wd-field-select>
+            <wd-field-select [title]="'Livello di alert'" [options]="optionsAlertLevels"
+                [selected]="optionAlertLevel.value" (valueChange)="findAlertLevelObj($event)"
+                class="p-0 px-2 col-12 col-md-6"></wd-field-select>
+        </div>
+        <div class="col text-center m-4">
+            <span class="p-1">
+                <button class="btn btn-outline-success" type="submit" *ngIf="itemID!==null"
+                    (click)="getItemUpdate()">Aggiorna</button>
+                <button class="btn btn-outline-success" type="submit" *ngIf="itemID===null"
+                    (click)="getFormResult()">Aggiungi</button>
+            </span>
+
+            <span class="p-1">
+                <button class="btn btn-outline-danger" [routerLink]="['/admin/items']">Annulla</button>
+            </span>
+        </div>
+    </form>
+</div>

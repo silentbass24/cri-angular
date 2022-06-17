@@ -1,0 +1,27 @@
+<!-- AutomedComponent diventa il componente responsabile per la gestione dei dati di automedica
+quindi è in questo componente che inseriamo anche la navtab e il footer ai quali passiamo solo dei parametri
+senza replicare la gestione della lista -->
+<app-nav-tab [menuTab]="campi" (changeTab)="getNodeByName($event)" [selectedItem]="indice"></app-nav-tab>
+<!--avviso-->
+<ng-container *ngIf="avvisoChecklist!==undefined; else nessunavviso">
+    <br><br><br><br>
+    <div  class="pb-2 mt-4 pt-4 text-center font-weight-bold">{{avvisoChecklist}}</div>
+    <div class="col text-center m-4 fixed-bottom">
+        <button class="btn btn-success" type="submit" (click)="backHome()">Home</button>
+    </div>
+</ng-container>
+<ng-template #nessunavviso> 
+     <!-- In app-form-control passiamo come parametro solo il nodo, che ricaviamo in automedcomponent -->
+     <app-form-control
+     [menuTab]="campi" 
+     [node]="node" 
+     [activeTab]="node.OrderID" 
+     [parentNode]="parentNode"
+     [fullCheckList]="check"
+     (changeTab2)="getNodeByName($event)" 
+     ></app-form-control>
+ 
+     <div class="col text-center m-4">
+       <button [disabled]="!canSubmit" class="btn btn-success" type="submit" (click)="onValueChange()"  routerLink="/result" >Conferma CheckList</button>
+     </div>
+</ng-template>

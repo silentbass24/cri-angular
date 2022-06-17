@@ -1,0 +1,1756 @@
+{
+ 
+  "checklist_automedica": {
+    "name": "CheckList AutoMedica",
+    "childNodes": [
+      {
+        "name": "ILLUM.",
+        "nComplete": "ILLUMINAZIONE",
+        "before": null,
+        "after": "CAB. GUIDA",
+        "isDropDownMenu": false,
+        "value": null,
+        "childNodes": [
+          {
+            "name": "ANABBAGLIANTI",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "ABBAGLIANTI",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "LUCI POSIZIONE ant. post. + targa",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "INDICATORI DI DIREZIONE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "LUCI DI EMERGENZA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "LUCI DI ARRESTO (stop)",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "LUCI RETROMARCIA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "FENDINEBBIA + RETRONEBBIA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "LUCE CABINA GUIDA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          }
+        ]
+      },
+      {
+        "name": "CAB. GUIDA",
+        "nComplete": "CABINA GUIDA",
+        "before": "ILLUM.",
+        "after": "SEDILE POSTERIORE",
+        "isDropDownMenu": false,
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "LIVELLO CARBURANTE (segnare q.tà)",
+            "type": "select",
+            "value": "",
+            "options": [
+              {
+                "name": "vuoto",
+                "value": "vuoto",
+                "alertLevel": "high"
+              },
+              {
+                "name": "1/4",
+                "value": "1/4",
+                "alertLevel": "med"
+              },
+              {
+                "name": "1/2",
+                "value": "1/2",
+                "alertLevel": "none"
+              },
+              {
+                "name": "3/4",
+                "value": "3/4",
+                "alertLevel": "none"
+              },
+              {
+                "name": "pieno",
+                "value": "pieno",
+                "alertLevel": "none"
+              }
+            ]
+          },
+          {
+            "name": "RADIO CRI",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          },
+          {
+            "name": "GIUBBOTTI ALTA VISIBILITA'",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          }
+        ]
+      },
+      {
+        "name": "SED.POST-B.COVID",
+        "nComplete": "SEDILE POSTERIORE-BORSA COVID",
+        "isDropDownMenu": true,
+        "value": null,
+        "childNodes": [
+          {
+            "name": "SEDILE POSTERIORE",
+            "nComplete": "SEDILE POSTERIORE",
+            "before": "CAB. GUIDA",
+            "after": "B.COVID",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "SATURIMETRO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "TERMOMETRO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "GUANTI MONOUSO XL",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "GUANTI MONOUSO L",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "GUANTI MONOUSO M",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "GUANTI MONOUSO S",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "LENZUOLA",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              }
+            ]
+          },
+          {
+            "name": "B.COVID",
+            "nComplete": "BORSA COVID",
+            "before": "SEDILE POSTERIORE",
+            "after": "BAULE",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "TUTE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "CAMICI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "VISIERE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "OCCHIALI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "CUFFIE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "CALZARI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "MASCHERINE CHIRURGICHE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "hihg"
+              },
+              {
+                "name": "MASCHERINE FPP2",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "BAULE",
+        "nComplete": "BAULE",
+        "before": "B.COVID",
+        "after": "INFUSIONE",
+        "isDropDownMenu": false,
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "BOMB. OSSIGENO PORTATILE (segnare q.tà in litri)",
+            "value": "",
+            "type": "number",
+            "alertLevel": "none"
+          },
+          {
+            "name": "BOMBOLA DI SCORTA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "ESTINTORE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          },
+          {
+            "name": "CASCHETTI",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "GUANTI DA LAVORO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "TRIANGOLO EMERGENZA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "TORCIA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          }
+        ]
+      },
+      {
+        "name": "FRIGO",
+        "nComplete": "FRIGO",
+        "before": "BAULE",
+        "after": "SACCA ROSSA-FARMACI",
+        "isDropDownMenu": true,
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "INFUSIONE",
+            "nComplete": "INFUSIONE",
+            "before": "BAULE",
+            "after": "SACCA ROSSA-FARMACI",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "FISIOLOGICA (1)",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "RINGER (1)",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "GLUCOSIO (1)",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              }
+            ]
+          },
+          {
+            "name": "SACCA ROSSA-FARMACI",
+            "nComplete": "SACCA ROSSA-FARMACI",
+            "before": "INFUSIONE",
+            "after": "SACCA GIALLA-FARMACI",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "LEVOPRAID",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "UGUROL",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "BUSCOPAN",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "PLASIL",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              }
+            ]
+          },
+          {
+            "name": "SACCA GIALLA-FARMACI",
+            "nComplete": "SACCA GIALLA-FARMACI",
+            "before": "SACCA ROSSA-FARMACI",
+            "after": "TASCA PRINCIPALE ZAINO",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "LUAN",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "TRIMETON",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "URBASON 20 mg",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "URBASON 40 mg",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "VALIUM",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "LASIX",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "CARVASIN",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ZAINO",
+        "nComplete": "ZAINO",
+        "isDropDownMenu": true,
+        "before": "SACCA GIALLA-FARMACI",
+        "after": "BORSA RIANIMAZIONE",
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "TASCA PRINCIPALE ZAINO",
+            "nComplete": "TASCA PRINCIPALE ZAINO",
+            "before": "SACCA GIALLA-FARMACI",
+            "after": "BORSA RIANIMAZIONE",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "CANNULE DI GUEDEL",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "MASCHERINE O2 (1 adulti - 1 pediatriche)",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "NASALINI O2 (numero 1)",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "GLUCOSIMETRO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "METALLINE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              }
+            ]
+          },
+          {
+            "name": "BORSA RIANIMAZIONE",
+            "nComplete": "BORSA RIANIMAZIONE",
+            "before": "TASCA PRINCIPALE ZAINO",
+            "after": "BORSA AGHI",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "AMBU",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "RESERVOIR",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "FILTRO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "MASCHERINE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "TUBO CORRUGATO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "TUBO DI RACCORDO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              }
+            ]
+          },
+          {
+            "name": "BORSA AGHI",
+            "nComplete": "BORSA AGHI",
+            "before": "BORSA RIANIMAZIONE",
+            "after": "BORSA INFUSIONE",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "LACCIO EMOSTATICO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "CINGHIA",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "AGHI VASOCAN (3 rosa, 3 verdi, 3 grigi, 3 blu)",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "AGHI BUTTERFLY (2 bianchi, 2 verdi, 2 blu)",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "SIRINGHE 2,5-5-10-20 ml x INSULINA",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "CEROTTI FLEBOFIX",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              }
+            ]
+          },
+          {
+            "name": "BORSA INFUSIONE",
+            "nComplete": "BORSA INFUSIONE",
+            "before": "BORSA AGHI",
+            "after": "BORSA VARIE",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "FISIOLOGICA (1)",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "RINGER (1)",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "GLUCOSIO (1)",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "DEFLUSSORI (2)",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              }
+            ]
+          },
+          {
+            "name": "BORSA VARIE",
+            "nComplete": "BORSA VARIE",
+            "before": "BORSA INFUSIONE",
+            "after": "TASCA PRINCIPALE",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "ABBASSALINGUA",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "BISTURI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "FORBICI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "APRIBOCCA CUNEO + SPIRALE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "PINZE CLAMPAGGIO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "TIRALINGUA",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "B.MED.",
+        "nComplete": "BORSA MEDICAZIONE",
+        "isDropDownMenu": true,
+        "before": "ILLUM.",
+        "after": "TASCA ANTERIORE",
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "TASCA PRINCIPALE",
+            "nComplete": "TASCA PRINCIPALE",
+            "before": "BORSA VARIE",
+            "after": "TASCA ANTERIORE",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "GARZE STERILI E NON STERILI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "CEROTTO SETA h 2,5 E 5 cm",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "COBAN",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "BENDE ORLATE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "NEOXINAL/CLOREXIDINA",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "TELINI STERILI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "GUANTI STERILI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "FORBICI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              }
+            ]
+          },
+          {
+            "name": "TASCA ANTERIORE",
+            "nComplete": "TASCA ANTERIORE",
+            "before": "TASCA PRINCIPALE",
+            "after": "TASCA LATERALE DESTRA",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "SFIGNOMANOMETRO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "FONENDOSCOPIO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "ACQUA OSSIGENATA",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "POVIDERM",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "GHIACCIO SPRAY",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "OCCHIALI PROTEZIONE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "MASCHERINE CHIRURGICHE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              }
+            ]
+          },
+          {
+            "name": "TASCA LATERALE DESTRA",
+            "nComplete": "TASCA LATERALE DESTRA",
+            "before": "TASCA ANTERIORE",
+            "after": "TASCA LATERALE SINISTRA",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "GHIACCIO SECCO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "GUANTI STERILI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "GUANTI STERILI NO POLVERE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              }
+            ]
+          },
+          {
+            "name": "TASCA LATERALE SINISTRA",
+            "nComplete": "TASCA LATERALE SINISTRA",
+            "before": "TASCA LATERALE DESTRA",
+            "after": "CERNIERA FRONTALE",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "TELINI STERILI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "CATETERE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "SACCA RACCOLTA URINE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              }
+            ]
+          },
+          {
+            "name": "CERNIERA FRONTALE",
+            "nComplete": "CERNIERA FRONTALE",
+            "before": "TASCA LATERALE SINISTRA",
+            "after": null,
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "SACCHI SPAZZATURA",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "checklist_autoambulanza": {
+    "name": "CheckList AutoAmbulanza",
+    "childNodes": [
+      {
+        "name": "ILLUM.",
+        "nComplete": "ILLUMINAZIONE",
+        "before": null,
+        "after": "CAB.GUIDA",
+        "isDropDownMenu": false,
+        "value": null,
+        "type": "node",
+        "childNodes": [
+          {
+            "name": "GIROFARI + SIRENA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          },
+          {
+            "name": "ANABBAGLIANTI",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "ABBAGLIANTI",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "LUCI POSIZIONE ant. post. + targa",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "INDICATORI DI DIREZIONE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "LUCI DI EMERGENZA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "LUCI DI ARRESTO (stop)",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          },
+          {
+            "name": "LUCI RETROMARCIA + CICALINO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          },
+          {
+            "name": "FENDINEBBIA + RETRONEBBIA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "LUCE CABINA GUIDA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "LUCE VANO SANITARIO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          }
+        ]
+      },
+      {
+        "name": "CAB.GUIDA-B.COVID",
+        "nComplete": "CABINA GUIDA-BORSA COVID",
+        "isDropDownMenu": true,
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "CAB.GUIDA",
+            "nComplete": "CABINA GUIDA",
+            "before": "ILLUM.",
+            "after": "B.COVID",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "LIVELLO CARBURANTE (segnare q.tà)",
+                "type": "select",
+                "value": "",
+                "options": [
+                  {
+                    "name": "vuoto",
+                    "value": "vuoto",
+                    "alertLevel": "high"
+                  },
+                  {
+                    "name": "1/4",
+                    "value": "1/4",
+                    "alertLevel": "med"
+                  },
+                  {
+                    "name": "1/2",
+                    "value": "1/2",
+                    "alertLevel": "none"
+                  },
+                  {
+                    "name": "3/4",
+                    "value": "3/4",
+                    "alertLevel": "none"
+                  },
+                  {
+                    "name": "pieno",
+                    "value": "pieno",
+                    "alertLevel": "none"
+                  }
+                ]
+              },
+              {
+                "name": "FRONTALINO 118 - Controllo batteria",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "FRONTALINO 118 - Riavvio giornaliero",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "RADIO 118",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "RADIO PORTATILE 118",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "TELEFONO CELLULARE 118",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "RADIO CRI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "BOLLETTARIO SERVIZI/RIFIUTO RIC.",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              }
+            ]
+          },
+          {
+            "name": "B.COVID",
+            "nComplete": "BORSA COVID",
+            "before": "CAB.GUIDA",
+            "after": "TRASP.",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "TUTE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "CAMICI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "VISIERE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "OCCHIALI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "CUFFIE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "CALZARI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "MASCHERINE CHIRURGICHE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "MASCHERINE FPP2",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "TRASP.",
+        "nComplete": "TRASPORTO",
+        "before": "B.COVID",
+        "after": "IMMOB.",
+        "isDropDownMenu": false,
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "BARELLA AUTOCARICANTE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          },
+          {
+            "name": "SCOOP + KIT FERMACAPO + 4 CINGHIE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          },
+          {
+            "name": "SEDIETTA SCENDISCALE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "TELO PORTAFERITI",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          }
+        ]
+      },
+      {
+        "name": "IMMOB.",
+        "nComplete": "IMMOBILIZZAZIONE",
+        "before": "TRASP.",
+        "after": "RESP.",
+        "isDropDownMenu": false,
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "MATERASSINO DEPRESSIONE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "STECCOBENDE RIGIDE e DEPRESSIONE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "COLLARI CERVICALI",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "KED",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "PEDIMATE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          }
+        ]
+      },
+      {
+        "name": "RESP.",
+        "nComplete": "RESPIRAZIONE",
+        "before": "IMMOB.",
+        "after": "INFUS.",
+        "isDropDownMenu": false,
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "BOMB. OSSIGENO 1 (segnare q.tà in litri)",
+            "value": "",
+            "type": "number",
+            "alertLevel": "none"
+          },
+          {
+            "name": "BOMB. OSSIGENO 2 (segnare q.tà in litri)",
+            "value": "",
+            "type": "number",
+            "alertLevel": "none"
+          },
+          {
+            "name": "BOMB. OSSIGENO PORTATILE (segnare q.tà in litri)",
+            "value": "",
+            "type": "number",
+            "alertLevel": "none"
+          },
+          {
+            "name": "ASPIRATORE FISSO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "ASPIRATORE PORTATILE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "SET TUBI ASPIRAZIONE + RACCORDO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "MASCHERINE 02 (3adulti - 2pediatriche)",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "NASALINI 02 (numero 2)",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          }
+        ]
+      },
+      {
+        "name": "INFUS.",
+        "nComplete": "INFUSIONE",
+        "before": "RESP.",
+        "after": "MEDICAZ.",
+        "isDropDownMenu": false,
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "LACCIO EMOSTATICO - CINGHIA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          },
+          {
+            "name": "FISIOLOGICA (2+2 scaldasacche)",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "RINGER (2+1 scaldasacche)",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "GLUCOSIO (2+1 scaldasacche)",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "DEFLUSSORI (numero 3)",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "AGHI VASOCAN (3 rosa, 3 verdi, 3 grigi, 3 blu)",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "AGHI BATTERFLY (2 bianchi, 2 verdi, 2 blu)",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "SIRINGHE 2,5-5-10-20ML - x INSULINA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "CEROTTI FLEBOFIX",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          }
+        ]
+      },
+      {
+        "name": "MEDICAZ.",
+        "nComplete": "MEDICAZIONE",
+        "before": "INFUS.",
+        "after": "SICUR.",
+        "isDropDownMenu": false,
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "GARZE STERILI e NON STERILI",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "CEROTTO SETA h 2,5 e 5 cm",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "COBAN",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "BENDE ORLATE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "ACQUA OSSIGENATA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "POVIDERM",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "NEOXINAL/CLOREXIDINA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "GHIACCIO SECCO + SPRAY",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "TELINI STERILI",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          }
+        ]
+      },
+      {
+        "name": "SICUR.",
+        "nComplete": "SICUREZZA",
+        "before": "MEDICAZ.",
+        "after": "B.INTUBAZIONE",
+        "isDropDownMenu": false,
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "GUANTI MONOUSO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "MASCHERINE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "OCCHIALI DI PROTEZIONE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "CASCHETTI",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "GIUBOTTI ALTAVISIBILITA'",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          },
+          {
+            "name": "TORCIA RICARICABILE + cono segnalaz.",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          },
+          {
+            "name": "ESTINTORE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          }
+        ]
+      },
+      {
+        "name": "B.INTUBAZIONE",
+        "nComplete": "BORSA INTUBAZIONE",
+        "before": "SICUR.",
+        "after": "VARIE",
+        "isDropDownMenu": false,
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "LAME + TUBI ENDOTRACHEALI",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "CANNULE DI GUEDEL",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          }
+        ]
+      },
+      {
+        "name": "VARIE",
+        "nComplete": "VARIE",
+        "before": "B.INTUBAZIONE",
+        "after": "RIANIMAZ.",
+        "isDropDownMenu": false,
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "SATURIMETRO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "SFIGMOMANOMETRO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          },
+          {
+            "name": "FONENDOSCOPIO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          },
+          {
+            "name": "SFIGMOMANOMETRO ELETTRONICO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "GLUCOSIMETRO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "FORBICI DI ROBIN",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "FORBICI",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "ABBASSALINGUA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          },
+          {
+            "name": "METALLINA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "TERMOMETRO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "PADELLA - PAPPAGALLO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "SACCHI SPAZZATURA",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          }
+        ]
+      },
+      {
+        "name": "RIANIMAZ.",
+        "nComplete": "RIANIMAZIONE",
+        "before": "VARIE",
+        "after": "DEFIBRILL.",
+        "isDropDownMenu": false,
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "AMBU",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "FILTRO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "RESERVOIR",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "med"
+          },
+          {
+            "name": "TUBO CORRUGATO",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "high"
+          },
+          {
+            "name": "MASCHERINE",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          },
+          {
+            "name": "CANNULE DI GUEDEL",
+            "value": null,
+            "type": "radio",
+            "alertLevel": "low"
+          }
+        ]
+      },
+      {
+        "name": "DEFIBRILL.",
+        "nComplete": "DEFIBRILLATORE",
+        "isDropDownMenu": false,
+        "before": "RIANIMAZ.",
+        "after": "TASCA INTERNA ZAINO",
+        "value": null,
+        "type": "node",
+        "childNodes": [
+              {
+                "name": "BATTERIA",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high",
+                "note": ""
+              },
+              {
+                "name": "PIASTRE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high",
+                "note": ""
+              },
+              {
+                "name": "GARZE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med",
+                "note": ""
+              },
+              {
+                "name": "RASOIO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med",
+                "note": ""
+              }
+        ]
+      },
+      {
+        "name": "ZAINO",
+        "nComplete": "ZAINO",
+        "isDropDownMenu": true,
+        "value": null,
+        "type": "",
+        "childNodes": [
+          {
+            "name": "TASCA INTERNA ZAINO",
+            "nComplete": "TASCA INTERNA ZAINO",
+            "before": "DEFIBRILL.",
+            "after": "TASCA CERNIERA LATERALE",
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "PALLONI AMBU (numero 2)",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "RESERVOIR",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "BORSA RIANIMAZIONE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "BORSA INFUSIONE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "BORSA MEDICAZIONE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "PORTA-AGHI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "KIT PARTO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "MASCHERINE E NASALINI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "CANNULE DI GUEDEL",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "FORBICI DI ROBIN",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              }
+            ]
+          },
+          {
+            "name": "TASCA CERNIERA LATERALE",
+            "nComplete": "TASCA CERNIERA LATERALE",
+            "before": "TASCA INTERNA ZAINO",
+            "after": null,
+            "isDropDownMenu": false,
+            "value": null,
+            "type": "",
+            "childNodes": [
+              {
+                "name": "AGHI + SIRINGHE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "CINGHIE + LACCIO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "FORBICI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "low"
+              },
+              {
+                "name": "ABBASSALINGUA",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "BISTURI",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "FONENDOSCOPIO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "SFIGMOMANOMETRO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "APRIBOCCA",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "MASCHERINE",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              },
+              {
+                "name": "SENSORE SAT. PEDIATRICO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "high"
+              },
+              {
+                "name": "GLUCOSIMETRO",
+                "value": null,
+                "type": "radio",
+                "alertLevel": "med"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

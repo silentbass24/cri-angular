@@ -1,0 +1,58 @@
+{
+    "name": "search_soccorritori_01",
+    "title": "RICERCA UTENTI",
+    "ordering": "true",
+    "pagination": "true",
+    "detail_name": "soccorritore",
+    "search_service": {
+        "url": "/api/user/search"
+    },
+    "dom": "<'top'<'float-left m-2'l><'float-right m-2 paginazione'i>>tr<'bottom'<'row justify-content-md-center m-2 paginazione'p>>",
+    "autorun": true,
+    "nr_column_update": 6,
+    "nr_column_delete": 7,
+    "search_fields": [
+        {
+            "title": "Cognome contiene",
+            "name": "surname",
+            "type": "text",
+            "operator" : "",
+            "visible" :true
+        },
+        {
+            "title": "Nome contiene",
+            "name": "name",
+            "type": "text",
+            "operator" : "",
+            "visible" :true
+        }
+    ],
+    "result_columns": [
+        {
+            "title": "Cognome",
+            "data": "Surname",
+            "orderable": true
+        },
+        {
+            "title": "Nome",
+            "data": "Name",
+            "orderable": true
+
+        },
+        {
+            "title": "Ruoli",
+            "data": "Roles[, </br>].Role",
+            "className": "text-center col-sm-auto",
+            "orderable": false
+        },
+        {
+            "title": "",
+            "data": null,
+            "className": "text-center",
+            "orderable": false,
+            "searchable": false,
+            "visible": true,
+            "defaultContent": ["<button class='btn btn-outline-secondary btn-sm'>Inserisci</button>"]
+        }
+    ]
+}

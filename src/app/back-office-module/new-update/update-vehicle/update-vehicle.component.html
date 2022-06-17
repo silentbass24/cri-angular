@@ -1,0 +1,32 @@
+<div class="container justify-content-center">
+    <form>
+        <div class="pb-4 mt-4 text-center" *ngIf="vehicleID.length!==0"><b>AGGIORNA DATI AUTOMEZZO</b></div>
+        <div class="pb-4 mt-4 text-center" *ngIf="vehicleID.length===0"><b>AGGIUNGI NUOVO AUTOMEZZO</b></div>
+        <div class="row">
+            <wd-field-text [title]="'Targa'" [required]=true (valueChange)="vehicleData.VehicleCode= $event"
+                [searchButtonVisible]=false class="p-0 px-2 col-12 col-md-6" [value]="vehicleData.VehicleCode"></wd-field-text>
+            <p *ngIf="vehicleData.Code === undefined" class="p-0 ngp-error-input">{{errorText}}</p>
+            <wd-field-select [title]="'Tipo di veicolo'" [required]=true [options]="optionsVehicleType"
+                [selected]="optionVehicleType.value" (valueChange)="findVehicleTypeObj($event)" class="p-0 px-2 col-12 col-md-6">
+            </wd-field-select>
+            <p *ngIf="vehicleData.VehicleTypesCode=== undefined" class="p-0 ngp-error-input">{{errorText}}</p>
+            <wd-field-number [title]="'Numero volontari'" (valueChange)="vehicleData.VolunteerNr = $event" class="p-0 px-2 col-12 col-md-6"
+                [value]="vehicleData.VolunteerNr"></wd-field-number>
+        </div>
+        <wd-field-check [title]="'Disponibile'" [value]="vehicleData.Available"
+            (valueChange)="vehicleData.Available = $event" class="p-0"></wd-field-check>
+        <div class="mb-4"></div>
+        <div class="col text-center m-4">
+            <span class="p-1">
+                <button class="btn btn-outline-success" type="submit" *ngIf="vehicleID.length!==0"
+                    (click)="getVehicleUpdate()">Aggiorna</button>
+                <button class="btn btn-outline-success" type="submit" *ngIf="vehicleID.length===0"
+                    (click)="getFormResult()">Aggiungi</button>
+            </span>
+
+            <span class="p-1">
+                <button class="btn btn-outline-danger" [routerLink]="['/admin/vehicles']">Annulla</button>
+            </span>
+        </div>
+    </form>
+</div>

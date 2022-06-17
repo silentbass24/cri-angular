@@ -1,0 +1,30 @@
+.testo-tabella{
+  font-size: 10px;
+}
+.dt-utenti{
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: auto;
+    max-width: 100%;
+    font-size: 12px; 
+}
+
+.dataTables_filter > label > input { 
+  font-size: var(--font-size-form-control) !important; 
+  font-weight: 600; 
+  border: 1px solid #ced4da; 
+  border-radius: .25rem; 
+  padding: 5px 5px; 
+  margin-bottom: 1rem; 
+} 
+
+.dataTables_filter > label { 
+  font-size: var(--font-size-form-label); 
+  margin-bottom: 0.2em; 
+  margin-left: 0.2em; 
+  color: var(--input-label-color); 
+  text-transform: capitalize; 
+}
+.dataTables_empty {
+  display: none;
+}

@@ -1,0 +1,50 @@
+<div class="container justify-content-center">
+    <form>
+        <div class="pb-4 mt-4 text-center" *ngIf="committeeID!==null"><b>AGGIORNA DATI COMITATO</b></div>
+        <div class="pb-4 mt-4 text-center" *ngIf="committeeID===null"><b>AGGIUNGI NUOVO COMITATO</b></div>
+        <button class="btn btn-outline-primary mb-2" type="submit" *ngIf="committeeID!==null"
+            (click)="newUser()">Aggiungi utente</button>
+        <!--<label class="ngp-field-label pb-2" for="img">Logo &nbsp;&nbsp;</label>
+        <input class="input-file" type="file" accept="image/*" (change)="onFileChange($event)">
+        <img [src]="url" *ngIf="url" height="100">-->
+        <div class="row">
+            <wd-field-text [title]="'Comitato'" [required]=true (valueChange)="committeeData.CommitteeName = $event"
+            [searchButtonVisible]=false class="p-0 px-2 col-12 col-md-6" [value]="committeeData.CommitteeName"></wd-field-text>
+            <p *ngIf="committeeData.CommitteeName === undefined" class="p-0 ngp-error-input">{{errorText}}</p>
+            <wd-field-text [title]="'Città'" [required]=true (valueChange)="committeeData.City = $event"
+                [searchButtonVisible]=false class="p-0 px-2 col-12 col-md-6" [value]="committeeData.City"></wd-field-text>
+            <p *ngIf="committeeData.City === undefined" class="p-0 ngp-error-input">{{errorText}}</p>
+            <app-field-hours-cri [title]="'Turno feriale mattino'" (valueChange)="committeeData.StartShift1 = $event"
+                [value]="committeeData.StartShift1" class="p-0 px-2 col-12 col-md-6"></app-field-hours-cri>
+            <app-field-hours-cri [title]="'Turno feriale pomeriggio'" (valueChange)="committeeData.StartShift2 = $event"
+                [value]="committeeData.StartShift2" class="p-0 px-2 col-12 col-md-6"></app-field-hours-cri>
+            <app-field-hours-cri [title]="'Turno feriale notte'" (valueChange)="committeeData.StartShift3 = $event"
+                [value]="committeeData.StartShift3" class="p-0 px-2 col-12 col-md-6"></app-field-hours-cri>
+            <app-field-hours-cri [title]="'Turno festivo mattino'" (valueChange)="committeeData.StartShift1Holiday = $event"
+                [value]="committeeData.StartShift1Holiday" class="p-0 px-2 col-12 col-md-6"></app-field-hours-cri>
+            <app-field-hours-cri [title]="'Turno festivo pomeriggio'"
+                (valueChange)="committeeData.StartShift2Holiday = $event" [value]="committeeData.StartShift2Holiday"
+                class="p-0 px-2 col-12 col-md-6"></app-field-hours-cri>
+            <app-field-hours-cri [title]="'Turno festivo notte'" (valueChange)="committeeData.StartShift3Holiday = $event"
+                [value]="committeeData.StartShift3Holiday" class="p-0 px-2 col-12 col-md-6"></app-field-hours-cri>
+            <!--email-->
+            <wd-field-text [title]="'Email per il riepilogo delle checklist'" (valueChange)="committeeData.Email = $event"
+                class="p-0 px-2 col-12 col-md-6" [value]="committeeData.Email">
+            </wd-field-text>
+        </div>
+        <wd-field-check [title]="'Attivare il servizio di allerta via email'" [value]="committeeData.AlertActive"
+        (valueChange)="committeeData.AlertActive = $event" class="p-0"></wd-field-check>
+        <div class="mb-4"></div>
+        <div class="col text-center m-4">
+            <span class="p-1">
+                <button class="btn btn-outline-success" type="submit" *ngIf="committeeID!==null"
+                    (click)="getCommitteeUpdate()">Aggiorna</button>
+                <button class="btn btn-outline-success" type="submit" *ngIf="committeeID===null"
+                    (click)="getFormResult()">Aggiungi</button>
+            </span>
+            <span class="p-1">
+                <button class="btn btn-outline-danger" [routerLink]="['/admin/committees']">Annulla</button>
+            </span>
+        </div>
+    </form>
+</div>

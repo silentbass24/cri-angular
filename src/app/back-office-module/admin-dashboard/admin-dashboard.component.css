@@ -1,0 +1,14 @@
+.rectangle{
+    text-align: center;
+    width:180px;
+    height:80px;
+    border: 2px solid rgb(28, 184, 65);;
+    border-radius: 10px;
+}
+.rectangle2{
+    text-align: center;
+    width:180px;
+    height:40px;
+    border: 2px solid rgb(28, 184, 65);;
+    border-radius: 10px;
+}

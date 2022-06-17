@@ -1,0 +1,51 @@
+<div class="container justify-content-center">
+    <form>
+        <div class="pb-4 mt-4 text-center" *ngIf="userID!==''"><b>AGGIORNA DATI UTENTE</b></div>
+        <div class="pb-4 mt-4 text-center" *ngIf="userID===''"><b>AGGIUNGI NUOVO UTENTE</b></div>
+        <div class="row">
+            <wd-field-text [title]="'Cognome'" [required]=true (valueChange)="userData.Surname = $event" class="p-0 px-2 col-12 col-md-6"
+            [value]="userData.Surname"></wd-field-text>
+            <p *ngIf="userData.Surname === undefined" class="p-0 ngp-error-input">{{errorText}}</p>
+            <wd-field-text [title]="'Nome'" [required]=true (valueChange)="userData.Name = $event"
+                [searchButtonVisible]=false class="p-0 px-2 col-12 col-md-6" [value]="userData.Name"></wd-field-text>
+            <p *ngIf="userData.Name === undefined" class="p-0 ngp-error-input">{{errorText}}</p>
+            <wd-field-text [title]="'Email'" [required]=true (valueChange)="userData.Email = $event" class="p-0 px-2 col-12 col-md-6"
+                [value]="userData.Email">
+            </wd-field-text>
+            <p *ngIf="userData.Email === undefined" class="p-0 ngp-error-input">{{errorText}}</p>
+            <ng-container *ngIf="userID!==''">
+                <wd-field-select *ngIf="isSuperAdmin" [title]="'Comitato'"
+                    [disabled]=true [options]="optionsCommittee" [selected]="optionCommittee.value"
+                    (valueChange)="findCommitteeObj($event)" class="p-0 px-2 col-12 col-md-6"></wd-field-select>
+            </ng-container>
+            <ng-container *ngIf="userID===''">
+                <wd-field-select *ngIf="isSuperAdmin" [title]="'Comitato'" [required]=true
+                    [options]="optionsCommittee" [selected]="optionCommittee.value" (valueChange)="findCommitteeObj($event)"
+                    class="p-0 px-2 col-12 col-md-6"></wd-field-select>
+            </ng-container>
+            <p *ngIf="userData.CommitteeCode === undefined" class="p-0 ngp-error-input">{{errorText}}</p>
+            <wd-field-text [title]="'Numero di telefono'" (valueChange)="userData.PhoneNumber = $event" class="p-0 px-2 col-12 col-md-6"
+                [value]="userData.PhoneNumber"></wd-field-text>
+        </div>
+        <ng-container *ngFor="let role of objRoles">
+            <wd-field-check [title]="role.Role" [value]="valueRole(role.Code)" (valueChange)="changedRole($event, role)"
+                class="p-0 px-2 ">
+            </wd-field-check><br>
+        </ng-container><br>
+        <p *ngIf="msgAlert !== undefined && msgAlert !== ''" class="p-0 text-center" style="color: red;">{{msgAlert}}
+        </p>
+        <div class="col text-center m-4">
+            <span class="p-1">
+                <button class="btn btn-outline-success" type="submit" *ngIf="userID!=='' && userID!==undefined"
+                    (click)="getUserUpdate()">Aggiorna</button>
+                <button class="btn btn-outline-success" type="submit" *ngIf="userID===''"
+                    (click)="getFormResult()">Aggiungi</button>
+            </span>
+
+            <span class="p-1">
+                <button class="btn btn-outline-danger" [routerLink]="['/admin/users']">Annulla</button>
+            </span>
+        </div>
+
+    </form>
+</div>

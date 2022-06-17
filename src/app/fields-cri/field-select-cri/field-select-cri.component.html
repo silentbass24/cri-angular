@@ -1,0 +1,41 @@
+<table>
+    <tbody>
+        <tr>
+            <td scope="row"
+                class="pl-2">
+                {{title}}<i *ngIf="required"><b>*</b></i>
+            </td>
+            <td class="col-md-4 col-sm-2 p-1"
+                rowspan="2">
+                <div
+                    class="form-group text-center mb-0"
+                    *ngIf="options.length">
+                    <select [disabled]="disabled"
+                        class="form-control form-control-sm"
+                        (change)="onValueChanged(selected)"
+                        [(ngModel)]="selected">
+                        <option
+                            *ngFor="let option of options"
+                            [ngValue]="option.value">
+                            {{option.name}}
+                        </option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<ng-container *ngIf="value === 'vuoto'">
+    <table>
+      <tr>
+        <td class="col-md-4 col-sm-2 p-1 text-center">
+            <div class="form-group text-center justify-content-center mb-0" >
+                <input type="text" class="form-control form-control-sm"
+                placeholder="{{placeholder}}"
+                [value]="note"
+                (keyup)="noteChanged($event)"> 
+            </div> 
+        </td>
+      </tr>
+    </table>
+</ng-container>

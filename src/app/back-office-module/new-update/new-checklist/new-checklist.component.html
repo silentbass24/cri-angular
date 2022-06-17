@@ -1,0 +1,48 @@
+<div class="container justify-content-center">
+  <form>
+    <div class="pb-4 mt-4 text-center" *ngIf="checklistID===null"><b>CREA NUOVA CHECKLIST</b></div>
+    <div class="pb-4 mt-4 text-center" *ngIf="checklistID!==null"><b>CREA NUOVA VERSIONE DELLA CHECKLIST</b></div>
+    <div >
+      Le checklist sono associate ad uno specifico mezzo; 
+      prima di creare una checklist assicurati di aver creato il veicolo corrispondente.
+      Se associ una checklist ad un veicolo esistente da questo momento le checklist utilizzeranno il modello appena creato.<br>
+      Spuntando "Standard template" crei un nuovo modello per creare una nuova checklist .
+    </div><br>
+    <div class="row">
+      <wd-field-text [title]="'Nome'" [required]=true (valueChange)="this.apiChecklist.newChecklist.Name = $event"
+      [value]="this.apiChecklist.newChecklist.Name" [searchButtonVisible]=false class="p-0 px-2 col-12 col-md-6">
+    </wd-field-text>
+    <p *ngIf="this.apiChecklist.newChecklist.Name === undefined" class="p-0 ngp-error-input">{{errorText}}</p>
+    <ng-container *ngIf="checklistID===null">
+      <wd-field-select [title]="'Veicolo'" [options]="optionsVehicle" [selected]="optionVehicle.value"
+        (valueChange)="findVehicleObj($event)" class="p-0 px-2 col-12 col-md-6">
+      </wd-field-select>
+      <wd-field-select [title]="'Tipo di veicolo'" [options]="optionsVehicleType" [selected]="optionVehicleType.value"
+        [disabled]="true" (valueChange)="findVehicleTypeObj($event)" class="p-0 px-2 col-12 col-md-6">
+      </wd-field-select>
+    </ng-container>
+    <ng-container *ngIf="checklistID!==null">
+      <field-select-search [title]="'Veicolo'" [options]="optionsVehicle" [readonly]="true"
+        [selected]="optionVehicle.value" (valueChange)="findVehicleObj($event)" class="p-0 px-2 col-12 col-md-6">
+      </field-select-search>
+      <wd-field-select [title]="'Tipo di veicolo'" [options]="optionsVehicleType" [disabled]="true"
+        [selected]="optionVehicleType.value" (valueChange)="findVehicleTypeObj($event)" class="p-0 px-2 col-12 col-md-6">
+      </wd-field-select>
+    </ng-container>
+    <wd-field-text [title]="'Descrizione'" (valueChange)="apiChecklist.newChecklist.Description = $event"
+      [value]="apiChecklist.newChecklist.Description" [searchButtonVisible]=false class="p-0 px-2 col-12 col-md-6">
+    </wd-field-text>  
+    <wd-field-check [title]="'Standard template'" [value]="apiChecklist.newChecklist.StandardTemplate"
+      (valueChange)="apiChecklist.newChecklist.StandardTemplate = $event" class="p-0 px-2 col-12 col-md-6"></wd-field-check>
+    </div>
+    <div class="col text-center m-4">
+      <span class="p-1">
+        <button class="btn btn-outline-success" type="submit" (click)="getFormResult()">Avanti</button>
+      </span>
+
+      <span class="p-1">
+        <button class="btn btn-outline-danger" [routerLink]="['/admin/checklists']">Annulla</button>
+      </span>
+    </div>
+  </form>
+</div>

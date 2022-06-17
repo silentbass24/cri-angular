@@ -1,0 +1,220 @@
+<div class="container justify-content-center">
+    <form>
+        <div class="pb-4 mt-4 text-center"><b>LISTA CATEGORIE</b></div>
+        <div>
+            Per creare una checklist è necessario inserire 
+            le categorie ed associare ad ognuno gli elementi che la compongono.<br>
+            Ad ogni elemento è possibile associare un contatto di riferimento 
+            per ricevere un avviso alla fine della compilazione della checklist
+            con il contatto da chiamare in caso di guasto.
+        </div><br>
+        <ul class="nav flex-column">
+            <ng-container *ngFor="let cat of checklistData; let i = index">
+                <!--nome della categoria-->
+                <li class="nav-item bg-category row py-2" *ngIf="cat.CategoryCode===undefined">
+                    <!--numerazione ordinamento categorie  
+                    <label>Ordine: &nbsp;</label>
+                    <input [(ngModel)]="cat.OrderID" type="number" min="1" max="99" maxlength="2" 
+                           class="bg-subcategory input-order" [ngModelOptions]="{standalone: true}">-->
+                   <div class="col-sm-2 p-0 pl-2">
+                    <label for="order{{cat.OrderID}}">Ordine: &nbsp;</label>
+                    <input type="number" class="bg-subcategory input-order" pattern="[0-9]" maxlength="2" min="1" max="99"
+                           [(ngModel)]="cat.OrderID" placeholder="{{cat.OrderID}}" name="order{{cat.OrderID}}">
+                   </div>
+                    <div class="col-sm-3 p-0" (click)="closeCategory(cat)">{{cat.Name}}
+                        <ng-container *ngIf="!cat.IsDropDown">
+                            <span *ngIf="cat.Value || cat.Name === catSelected; else apri">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-chevron-up" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                                </svg>
+                            </span>
+                            <ng-template #apri>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </ng-template>
+                        </ng-container>
+                    </div>
+                    <!--tasto aggiungi sottocategoria alla categoria-->
+                    <div class="col-sm-3 p-0">
+                        <button [disabled]="cat.Note === 'true' || cat.IsDropDown === false && cat.Childs.length !== 0"
+                            class="btn btn-outline-dark btn-sm"
+                            (click)="searchCategoria2.Search(getSearchExtraParametersCategory())">
+                           + SOTTOCATEGORIA</button>
+                    </div>
+                    <!--tasto aggiungi item alla categoria-->
+                    <div class="col-sm-3 p-0" *ngIf="!cat.IsDropDown">
+                        <button class="btn btn-outline-dark btn-sm"
+                            (click)="searchItem2.Search(getSearchExtraParametersItems())">+ ITEM</button>
+                    </div>
+                    <div class="col-sm-3 p-0" *ngIf="cat.IsDropDown">
+                    </div>
+                    <!--tasto elimina-->
+                    <div class="col-sm-1 p-1">
+                        <button type="button" class="close" aria-label="Close" (click)="deleteCategory(cat.Name, cat.OrderID)">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </li>
+                <!--ricerca item per categoria-->
+                <wd-field-text #txtItem2 [hidden]="true" class="p-0" [title]="'Scegli item'"
+                    [searchButtonVisible]="true" (click)="searchItem2.Search(getSearchExtraParametersItems())"
+                    (searchClick)="searchItem2.Search(getSearchExtraParametersItems())">
+                </wd-field-text>
+                <wd-modal-search-def #searchItem2 [searchName]='"items"' (searchResult)="newValueItem2($event, cat)">
+                </wd-modal-search-def>
+                <!--ricerca sottocategoria-->
+                <wd-field-text #txtCategoria2 [hidden]="true" class="p-0"
+                    [title]="'Scegli una categoria per creare la checklist'" [searchButtonVisible]="true"
+                    (searchClick)="searchCategoria2.Search(getSearchExtraParametersCategory())"
+                    (click)="searchCategoria2.Search(getSearchExtraParametersCategory())">
+                </wd-field-text>
+                <wd-modal-search-def #searchCategoria2 [searchName]='"items"'
+                    (searchResult)="newValueCategory2($event, cat)">
+                </wd-modal-search-def>
+                <!--da nascondere-->
+                <ng-container *ngIf="cat.Value || cat.Name === catSelected">
+                    <ng-container *ngFor="let item of cat.Childs">
+                        <ul class="nav flex-column">
+                            <li class="nav-item row py-2" *ngIf="!cat.IsDropDown">
+                                <div class="col-sm-2 p-0 pl-2"></div>
+                                <div class="col-sm-3 p-0"> - {{item.Name}}</div>
+                                <div class="col-sm-3 p-0">
+                                    {{findUser(item.ContactCode)}}
+                                </div>
+                                 <!--tasto aggiungi contatto di riferimento-->
+                                <div class="col-sm-3 p-0">
+                                    <button class="btn btn btn-outline-secondary btn-sm"
+                                        (click)="searchContactID1.Search(addContactCode())">+ CONTATTO</button>
+                                </div>
+                                <div class="col-sm-1 p-1">
+                                    <button type="button" class="close" aria-label="Close"
+                                        (click)="deleteItem(item.Name, cat)">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </li>
+                            <!--ricerca contatto di riferimento per item-->
+                            <wd-field-text #txtContactID1 [hidden]="true" class="p-0" [title]="'Scegli contatto'"
+                                [searchButtonVisible]="true" (click)="searchContactID1.Search(addContactCode())"
+                                (searchClick)="searchContactID1.Search(addContactCode())">
+                            </wd-field-text>
+                            <wd-modal-search-def #searchContactID1 [searchName]='"users-home"' (searchResult)="newValueUserID1($event, item)">
+                            </wd-modal-search-def>
+                        </ul>
+                    </ng-container>
+                </ng-container>
+                <ng-container *ngFor="let sub of cat.Childs">
+                    <!--nome della sottocategoria -->
+                    <li class="nav-item bg-subcategory row py-2" *ngIf="cat.IsDropDown">
+                        <div class="col-sm-2 p-0 pl-2">
+                            <label for="order{{sub.OrderSubID}}">Ordine: &nbsp;</label>
+                            <input type="number" class="bg-subcategory input-order" pattern="[0-9]" maxlength="2" min="1" max="99"
+                                   [(ngModel)]="sub.OrderSubID" placeholder="{{sub.OrderSubID}}" name="order{{sub.OrderSubID}}">
+                        </div>
+                        <div class="col-sm-3 p-0" (click)="closeCategory(sub)">
+                            - {{sub.Name}}
+                            <ng-container *ngIf="cat.IsDropDown">
+                                <span *ngIf="sub.Value || sub.Name === catSelected; else apri">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-up" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                                    </svg>
+                                </span>
+                                <ng-template #apri>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                </ng-template>
+                            </ng-container>
+                        </div>
+                        <div class="col-sm-3 p-0">
+                        </div>
+                        <!--buttone aggiungi item alla sottocategoria-->
+                        <div class="col-sm-3 p-0">
+                            <button class="btn btn-outline-secondary btn-sm"
+                                (click)="searchItem1.Search(getSearchExtraParametersItems())">+ ITEM</button>
+                        </div>
+                        <!--buttone elimina sottocategoria-->
+                        <div class="col-sm-1 p-1">
+                            <button type="button" class="close" aria-label="Close"
+                                (click)="deleteSubCategory(cat, sub)">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </li>
+                    <!--ricerca item per sottocategoria-->
+                    <wd-field-text #txtItem1 [hidden]="true" class="p-0" [title]="'Scegli item'"
+                        [searchButtonVisible]="true" (click)="searchItem1.Search(getSearchExtraParametersItems())"
+                        (searchClick)="searchItem1.Search(getSearchExtraParametersItems())">
+                    </wd-field-text>
+                    <wd-modal-search-def #searchItem1 [searchName]='"items"'
+                        (searchResult)="newValueItem1($event, sub)">
+                    </wd-modal-search-def>
+                    <ng-container *ngIf="sub.Value || sub.Name === catSelected">
+                        <ng-container *ngFor="let item of sub.Childs">
+                            <ul class="nav flex-column">
+                                <li class="nav-item row py-2">
+                                    <div class="col-sm-2 p-0 pl-2"></div>
+                                    <div class="col-sm-3 p-0"> - {{item.Name}}</div>
+                                    <div class="col-sm-3 p-0">
+                                      {{findUser(item.ContactCode)}}
+                                    </div>
+                                    <!--tasto aggiungi contatto di riferimento-->
+                                    <div class="col-sm-3 p-0">
+                                        <button class="btn btn btn-outline-secondary btn-sm"
+                                            (click)="searchContactID1.Search(addContactCode())">+ CONTATTO</button>
+                                    </div>
+                                    <div class="col-sm-1 p-1">
+                                        <button type="button" class="close" aria-label="Close"
+                                            (click)="deleteItem(item.Name, sub)">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <!--ricerca contatto di riferimento per item-->
+                                <wd-field-text #txtContactID1 [hidden]="true" class="p-0" [title]="'Scegli contatto'"
+                                [searchButtonVisible]="true" (click)="searchContactID1.Search(addContactCode())"
+                                (searchClick)="searchContactID1.Search(addContactCode())">
+                                </wd-field-text>
+                                <wd-modal-search-def #searchContactID1 [searchName]='"users-home"' 
+                                                     (searchResult)="newValueUserID1($event, item)">
+                                </wd-modal-search-def>
+                            </ul>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+                <div class="m-1"></div><!--spazio tra le categorie-->
+            </ng-container>
+            <!--aggiungi categoria-->
+            <li>
+                <div class="py-2">
+                    <button class="btn btn-outline-category"
+                        (click)="searchCategoria1.Search(getSearchExtraParametersCategory())">INSERISCI CATEGORIA</button>
+                    <!--ricerca categoria-->
+                    <wd-field-text #txtCategoria1 [hidden]="true" class="p-0"
+                        [title]="'Scegli una categoria per creare la checklist'" [searchButtonVisible]="true"
+                        (searchClick)="searchCategoria1.Search(getSearchExtraParametersCategory())"
+                        (click)="searchCategoria1.Search(getSearchExtraParametersCategory())">
+                    </wd-field-text>
+                    <wd-modal-search-def #searchCategoria1 [searchName]='"items"'
+                        (searchResult)="newValueCategory1($event)">
+                    </wd-modal-search-def>
+                </div>
+            </li>
+        </ul>
+        <br><br>
+        <div class="pt-4 text-center">
+            <button class="btn btn-primary m-1" type="submit" (click)="getFormCategories()">Salva bozza</button>
+            <button class="btn btn-success m-1" type="submit" (click)="getFormCategoriesDef()">Salva definitivo</button>
+            <button class="btn btn-danger m-1" type="submit" [disabled]="!isDraft" (click)="deleteDraft()">Elimina bozza</button>
+        </div>
+    </form>
+</div>

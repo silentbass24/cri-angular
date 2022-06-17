@@ -1,0 +1,50 @@
+<ng-container *ngIf="!homeService.avanti">
+    <div class="scroll-container">
+        <form>
+        <div class="container-md">
+            <wd-field-select [title]="'Scelta Turno'" [options]="opzioniTurni" (valueChange)="homeResult.Turno = $event"
+                [selected]="homeResult.Turno"></wd-field-select>
+            <wd-field-date [title]="'Data Turno'" [value]="todayDay" (valueChange)="homeResult.Data = $event" [readonly]="true">
+            </wd-field-date>
+            <wd-field-select [title]="'Scelta Automezzo'" [options]="opzioniMezzi" (valueChange)="findVehicleObj($event)"
+                (change)="Confronto()"></wd-field-select>
+            <div *ngIf="homeService.numeroSocc !== 0" class="p-0">
+                <wd-field-text #txtAutista [title]="'Autista'" [searchButtonVisible]=true
+                    (click)="isAutisti=true; isSoccorritori=false; searchAutisti.Search(getSearchExtraParameters())"
+                    (searchClick)="searchAutisti.Search(getSearchExtraParameters())"></wd-field-text>
+                <wd-modal-search-def #searchAutisti [searchName]='"users-home"' (searchResult)="newValueAutista($event)">
+                </wd-modal-search-def>
+                <wd-field-text #txtSoccorritore1 [title]="'Soccorritore 1'" [searchButtonVisible]=true
+                    (click)="isAutisti=false; isSoccorritori=true; searchSoccorritore1.Search(getSearchExtraParameters())"
+                    (searchClick)="searchSoccorritore1.Search(getSearchExtraParameters())"></wd-field-text>
+                <wd-modal-search-def #searchSoccorritore1 [searchName]='"users-home"'
+                    (searchResult)="newValueSoccorritore1($event)"></wd-modal-search-def>
+                <div *ngIf="homeService.numeroSocc===3 || homeService.numeroSocc===4" class="p-0">
+                    <wd-field-text #txtSoccorritore2 [title]="'Soccorritore 2'" [searchButtonVisible]=true
+                        (click)="isAutisti=false; isSoccorritori=true; searchSoccorritore2.Search(getSearchExtraParameters())"
+                        (searchClick)="searchSoccorritore2.Search(getSearchExtraParameters())"></wd-field-text>
+                    <wd-modal-search-def #searchSoccorritore2 [searchName]='"users-home"'
+                        (searchResult)="newValueSoccorritore2($event)"></wd-modal-search-def>
+                </div>
+                <div *ngIf="homeService.numeroSocc===4" class="p-0">
+                    <wd-field-text #txtSoccorritore3 [title]="'Soccorritore 3'" [searchButtonVisible]=true
+                        (click)="isAutisti=false; isSoccorritori=true; searchSoccorritore3.Search(getSearchExtraParameters())"
+                        (searchClick)="searchSoccorritore3.Search(getSearchExtraParameters())"></wd-field-text>
+                    <wd-modal-search-def #searchSoccorritore3 [searchName]='"users-home"'
+                        (searchResult)="newValueSoccorritore3($event)"></wd-modal-search-def>
+                </div>
+             </div>  
+          
+        </div>
+        </form>
+    </div>
+    <div class="col text-center m-4" [ngClass]="buttonClass">
+        <button [disabled]="!homeService.avantiDisabile" class="btn btn-success" type="button" (click)="onsubmit()">
+            Avanti
+        </button>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="homeService.avanti">
+    <app-main [checklistID]="checklistID"></app-main>
+</ng-container>

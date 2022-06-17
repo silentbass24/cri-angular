@@ -1,0 +1,15 @@
+<div class="form-group">
+
+    <label class="ngp-field-label" for="id_mandato" >{{title}}<i *ngIf="required" ><b>*</b></i></label>
+    <div class="input-group">
+        <input type="time" 
+        name="title"
+        (change)="valueChange.emit(value)"
+        [(ngModel)]="value"
+        [required]="required"
+        [readonly]="readonly"
+        [ngClass]="['form-control', 'ngp-field', errorText ? 'input-wrong' : '', notValid? 'border-danger' : '']"
+        >
+    </div>
+    <p *ngIf="errorText" class="ngp-error-input">{{errorText}}</p>
+</div>

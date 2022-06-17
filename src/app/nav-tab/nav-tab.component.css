@@ -1,0 +1,19 @@
+
+.full {
+    border-color: rgb(28, 184, 65);
+    color: rgb(28, 184, 65);
+    font-weight: bold;
+}
+
+.half {
+    border-color: rgb(217, 167, 121); /*rgb(223, 117, 20)*/     
+    color: rgb(223, 117, 20);
+    font-weight: bold;
+
+}
+
+.empty {
+    border-color: rgb(202, 60, 60);
+    color:  rgb(202, 60, 60);
+    font-weight: bold;
+}

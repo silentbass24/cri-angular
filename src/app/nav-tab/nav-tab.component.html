@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="container-fluid">
+      <ul class="nav nav-tabs mr-auto navChar"> 
+        <!--simple menu-->
+        <li class="nav-item" *ngFor="let menu of menuTab; let i = index">
+            <a
+            class="nav-link"
+            *ngIf="!menu.IsDropDown"
+            (click)="tabChange(menu.Name); selectedItem = i"   
+            [ngClass]="getClass(i, menu)"
+            role="button"
+            >{{menu.Name}}
+           </a>     
+          <!--dropdown menu-->
+              <div ngbDropdown class="nav-item">
+                <a
+                  [ngClass]="getClass(i, menu)"
+                  class="nav-link"
+                  ngbDropdownToggle
+                  id="{{ menu.Name }}"
+                  *ngIf="menu.IsDropDown"
+                  role="button"
+                  (click)="selectedItem = i">
+                  {{ menu.Name }}
+                </a>
+                  <div ngbDropdownMenu class="navChar">
+                    <a *ngFor="let submenu of menu.Childs" ngbDropdownItem  
+                       (click)="tabChange(submenu.Name)"
+                       [ngClass]="getClass(null, submenu)">
+                      {{submenu.Name}}</a>
+                  </div>
+              </div>   
+          <!--fine dropdown menu-->
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+

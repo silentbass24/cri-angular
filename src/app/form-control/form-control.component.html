@@ -1,0 +1,78 @@
+<div class="scroll-container">
+  <div
+    class="container-fluid row align-self-center justify-content-around fixed"
+    style="height: 550px"
+  >
+    <div class="col-sm-auto cursor align-self-center" (click)="onBack()">
+      <span class="material-icons" style="font-size: 30px"> arrow_back_ios </span>
+    </div>
+    <div class="col-sm-9">
+      <form>
+        <div class="container">
+          <div *ngIf="node.NameComplete!==undefined&&node.NameComplete!=='';else nome_noncompl">
+             <h3 class="mt-2 mb-0 p-3 title-category">{{ node.NameComplete }}</h3>
+          </div>
+          <ng-template #nome_noncompl>
+             <h3 class="mt-2 mb-0 p-3 title-category">{{ node.Name }}</h3>
+          </ng-template>
+          <table class="form-table">
+            <tr *ngFor="let cat of node.Childs" class="form-tr">
+              <td  *ngIf="cat.Type === 'select'">
+                <app-field-select-cri
+                  [parentNode]="parentNode"
+                  [title]="cat.Name"
+                  [options]="optionCarburante"
+                  [node]="node"
+                  [note]="cat.Note"
+                  (valueChange)="cat.Value = $event"
+                  (valueChangeText)="cat.Note = $event"
+                  [value]="cat.Value"
+                  [fullCheckList]="fullCheckList"
+                ></app-field-select-cri>
+              </td>
+              <td *ngIf="cat.Type === 'radio'">
+                <app-field-check-cri
+                  [parentNode]="parentNode"
+                  [title]="cat.Name"
+                  [(value)]="cat.Value"
+                  [note]="cat.Note"
+                  (valueChangeText)="cat.Note = $event"
+                  [node]="node"
+                  [fullCheckList]="fullCheckList"
+                ></app-field-check-cri>
+              </td>
+              <td  *ngIf="cat.Type === 'text'">
+                <app-field-text-cri
+                  [parentNode]="parentNode"
+                  [(value)]="cat.Value"
+                  (valueChangeText)="cat.Note = $event"
+                  [title]="cat.Name"
+                  [node]="node"
+                  [note]="cat.Note"
+                  [fullCheckList]="fullCheckList"
+                ></app-field-text-cri>
+              </td>
+              <td  *ngIf="cat.Type === 'number'">
+                <app-field-text-no-cri
+                [parentNode]="parentNode"
+                [(value)]="cat.Value"
+                (valueChangeText)="cat.Note = $event"
+                [title]="cat.Name"
+                [node]="node"
+                [note]="cat.Note"
+                [fullCheckList]="fullCheckList"
+              ></app-field-text-no-cri>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-sm-auto cursor align-self-center" (click)="onNext()">
+      <span class="material-icons" style="font-size: 30px">
+        arrow_forward_ios
+      </span>
+    </div>
+  </div>
+</div>

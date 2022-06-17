@@ -1,0 +1,80 @@
+/* You can add global styles to this file, and also import other style files */
+.spacingTitle{
+    letter-spacing: 3px;
+}
+.formatLogo{
+    max-height: 80px;
+}
+h3{
+    font-size: large;
+}
+h4{
+    font-size: medium;
+}
+h5{
+    font-size: small;
+}
+.cursor{
+    cursor: pointer;
+}
+.main-height{
+    min-height:100vh;
+}
+.navChar{
+    font-size: 12px;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: auto;
+    width: 100%;
+    max-width: 40em;
+    font-size: small;
+    font-weight: bold;
+}
+.title-category{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px; 
+}
+input{
+    font-size: 10px;
+}
+.nav-link {
+    color: black;
+}
+.paginazione{ 
+    border-radius: 12px; 
+    cursor:pointer;  
+    text-decoration: none; 
+    font-size: 12px; 
+} 
+.ngp-error-input {
+    font-size: 8pt;
+    color: rgb(187, 19, 19);
+}
+
+.scroll-container{
+    overflow-y: scroll;
+}
+.color-green{
+    color: rgb(28, 184, 65);
+}
+.color-red{
+    color:  rgb(202, 60, 60);
+}
+
+/*tabella*/
+.dt-utenti{
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: auto;
+    max-width: 100%;
+    font-size: 12px; 
+}
+
+.btn{
+    min-width: 120px;
+    max-width: 200px;;
+}

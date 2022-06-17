@@ -1,0 +1,8 @@
+ 
+ <div class="form-check form-check-inline ngp-checkbox-group">
+        <button
+        [ngClass]="value === true ? 'btn btn-success btn-sm' : 'btn btn-outline-success btn-sm'"
+        [disabled]="disabled"
+        (click)="changeValue()">{{title}}
+      </button>
+</div>

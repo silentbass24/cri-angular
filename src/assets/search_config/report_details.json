@@ -1,0 +1,41 @@
+{
+    "name": "search_report_01",
+    "ordering": "true",
+    "pagination": "true",
+    "detail_name": "report",
+    "search_service": {
+        "url": "/api/admin/getItemDetailsHistory"
+    },
+    "dom": "<'top'<'float-left m-2'l><'float-right m-2 paginazione'i>>tr<'bottom'<'row justify-content-md-center m-2 paginazione'p>>",
+    "autorun": true,
+    "nr_column_update": 7,
+    "nr_column_delete": 8,
+    "search_fields": [
+    ],
+    "result_columns": [
+        {
+            "title": "Data di creazione",
+            "data": "CreatedAt",
+            "orderable": false,
+            "visible": true
+        },
+        {
+            "title": "Note",
+            "data": "ErrorMessage",
+            "orderable": false,
+            "visible": true
+        },
+        {
+            "title": "Data di riparazione",
+            "data": "RepairDate",
+            "orderable": false,
+            "visible": true
+        },
+        {
+            "title": "Stano di riparazione",
+            "data": "Repaired",
+            "orderable": false,
+            "visible": true
+        }
+    ]
+}

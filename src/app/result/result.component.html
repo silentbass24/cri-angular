@@ -1,0 +1,100 @@
+<div class="pb-4 mt-4 text-center"><b>RIASSUNTO</b></div>
+<div class="ml-4 mt-4" *ngFor="let item of homeService.resultHomeForm">
+  <ul>
+    <li>Automezzo: {{item.Automezzo | convertValueVehicles: objVehicles}}</li>
+    <li>Turno: {{item.Turno}}</li>
+    <li>Data: {{item.Data | date: 'dd MMM yyyy'}}</li>
+    <li *ngIf="item.Autista !== undefined">Autista: {{ item.Autista | convertValueUsers : objUsers}}</li>
+    <li *ngIf="item.Soccorritore1 !== null && item.Soccorritore1 !== undefined">Soccorritore 1: {{item.Soccorritore1 |
+      convertValueUsers : objUsers}}</li>
+    <li *ngIf="item.Soccorritore2 !== null && item.Soccorritore2 !== undefined">
+      Soccorritore 2: {{item.Soccorritore2 | convertValueUsers : objUsers}}
+    </li>
+    <li *ngIf="item.Soccorritore3 !== null && item.Soccorritore3 !== undefined">
+      Soccorritore 3: {{item.Soccorritore3 | convertValueUsers : objUsers}}
+    </li>
+  </ul>
+</div>
+
+<div class="col text-center m-4" *ngIf="!everyTRUE">
+  <button class="btn btn-outline-danger m-1" (click)="soloNO()">Solo NO</button>
+  <button class="btn btn-outline-success m-1" (click)="getAllResult()">TUTTO</button>
+</div>
+
+<table *ngIf="!everyTRUE; else tuttoOK" #datatableResult datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table row-border m-2 dt-utenti" style="width: 98%;">
+  <thead>
+    <tr>
+      <th scope="col" *ngFor="let column of ['Categoria', 'Item', 'Valore', 'Note']" class="text-center">{{column}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let data of medCarService.resultForm">
+    <tr *ngIf="visualizza === false && getClass(data.Value)==='sfondo-rosso'">
+      <td>{{data.Category | convertValueCategory : objCategories}}</td>
+      <td>{{data.Name}}</td>
+      <td class="text-center">
+        <span class="sfondo-rosso">Non conforme</span>
+      </td>
+      <td class="text-center">
+        <span *ngIf="data.Note">{{data.Note}}</span>
+        <span *ngIf="!data.Note">-</span>
+      </td>
+    </tr>
+    <tr *ngIf="visualizza === true">
+      <td>{{data.Category | convertValueCategory : objCategories}}</td>
+      <td>{{data.Name}}</td>
+      <td class="text-center">
+        <span *ngIf="data.Value===true" class="sfondo-verde">Conforme</span>
+        <span *ngIf="data.Value===false" class="sfondo-rosso">Non conforme</span>
+      </td>
+      <td class="text-center">
+        <span *ngIf="data.Note">{{data.Note}}</span>
+        <span *ngIf="!data.Note">-</span>
+      </td>
+    </tr>
+  </ng-container>
+  </tbody>
+</table>
+
+<ng-template #tuttoOK>
+  <div class="sfondo-verde text-center">
+    <h3>TUTTO CONFORME</h3>
+  </div>
+</ng-template>
+
+<div class="col text-center m-4" [ngClass]="buttonClass">
+  <button class="btn btn-success" (click)="backHomePage(popup)">Home</button>
+</div>
+
+<ng-template #popup>
+  <div class="modal-header list-group-item list-group-item-warning">
+    <div class="d-flex justify-content-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+        class="bi bi-exclamation-triangle mr-2" viewBox="0 0 16 16">
+        <path
+          d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z" />
+        <path
+          d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z" />
+      </svg>
+      <h4 class="modal-title font-weight-bold text-center">
+        Messaggio di avviso</h4>
+    </div>
+    <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <ul class="list-group list-group-flush" *ngFor="let msg of message" [innerHTML]="msg">
+      <li class="list-group-item text-center">
+        <span>{{msg}}</span>
+      </li>
+      <hr>
+    </ul>
+  </div>
+
+  <div class="modal-footer d-flex justify-content-center">
+    <button type="button" class="btn btn-outline-dark" (click)="closeModal()">Chiudi</button>
+  </div>
+
+</ng-template>
